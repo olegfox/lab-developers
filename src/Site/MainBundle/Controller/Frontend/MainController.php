@@ -37,6 +37,19 @@ class MainController extends Controller
             'form' => $form->createView()
         ));
     }
+    public function contactsAction()
+    {
+        $repository_page = $this->getDoctrine()->getRepository('SiteMainBundle:Page');
+
+        $page = $repository_page->findOneBySlug('kontakty');
+
+        $form = $this->createCreateForm(new Feedback());
+
+        return $this->render('SiteMainBundle:Frontend/Main:contacts.html.twig', array(
+            'page' => $page,
+            'form' => $form->createView()
+        ));
+    }
 
     public function feedbackAction(Request $request){
         $feedback = new Feedback();

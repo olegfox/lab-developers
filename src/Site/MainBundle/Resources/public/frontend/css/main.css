@@ -240,12 +240,16 @@ nav {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
+
 /* line 148, main.scss */
 nav.black {
   background: #000;
 }
 @media screen and (max-width: 900px) {
   /* line 148, main.scss */
+    nav {
+      height: 68px;
+    }
   nav.black {
     height: 68px;
     background: none;
@@ -836,3 +840,12 @@ section.home .black {
     content: "";
 }
 
+.null-block {
+    position: relative;
+    height: 105px;
+}
+@media screen and (max-width: 900px) {
+    .null-block {
+        height: 68px;
+    }
+}

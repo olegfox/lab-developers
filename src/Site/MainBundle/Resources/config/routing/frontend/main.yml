@@ -7,17 +7,13 @@ frontend_feedback:
     defaults: { _controller: "SiteMainBundle:Frontend/Main:feedback" }
     methods:  POST
 
-frontend_news:
-    resource: "@SiteMainBundle/Resources/config/routing/frontend/news.yml"
-    prefix: /novosti
+frontend_work:
+    resource: "@SiteMainBundle/Resources/config/routing/frontend/work.yml"
+    prefix: /nashi-raboty
 
-frontend_director:
-    resource: "@SiteMainBundle/Resources/config/routing/frontend/director.yml"
-    prefix: /rukovodstvo
-
-frontend_group_company:
-    resource: "@SiteMainBundle/Resources/config/routing/frontend/group_company.yml"
-    prefix: /struktura
+frontend_page_contacts:
+    path:     /kontakty
+    defaults: { _controller: "SiteMainBundle:Frontend/Main:contacts" }
 
 frontend_page_index:
     path:     /{slug}

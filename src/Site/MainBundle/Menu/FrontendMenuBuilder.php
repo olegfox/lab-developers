@@ -24,13 +24,13 @@ class FrontendMenuBuilder extends ContainerAware
         $menu->setChildrenAttribute('class', 'menu collapse');
 
         foreach ($menus as $key => $m) {
-            if($m->getSlug() == 'rukovodstvo'){
+            if($m->getSlug() == 'kontakty'){
                 $menu->addChild($m->getTitle(), array(
-                    'route' => 'frontend_director_index'
+                    'route' => 'frontend_page_contacts'
                 ));
-            } elseif ($m->getSlug() == 'struktura'){
+            } elseif ($m->getSlug() == 'nashi-raboty'){
                 $menu->addChild($m->getTitle(), array(
-                    'route' => 'frontend_group_company_index'
+                    'route' => 'frontend_work_index'
                 ));
             } else{
                 if($m->getSlug() != 'glavnaia'){
