@@ -1,0 +1,27 @@
+backend_dashboard:
+    path:     /
+    defaults: { _controller: "SiteMainBundle:Backend/Dashboard:index" }
+
+backend_page:
+    resource: "@SiteMainBundle/Resources/config/routing/backend/page.yml"
+    prefix: /page
+
+backend_background:
+    resource: "@SiteMainBundle/Resources/config/routing/backend/background.yml"
+    prefix: /background
+
+backend_news:
+    resource: "@SiteMainBundle/Resources/config/routing/backend/news.yml"
+    prefix: /news
+
+backend_project:
+    resource: "@SiteMainBundle/Resources/config/routing/backend/project.yml"
+    prefix: /project
+
+backend_partners:
+    resource: "@SiteMainBundle/Resources/config/routing/backend/partners.yml"
+    prefix: /partners
+
+backend_service:
+    resource: "@SiteMainBundle/Resources/config/routing/backend/service.yml"
+    prefix: /service

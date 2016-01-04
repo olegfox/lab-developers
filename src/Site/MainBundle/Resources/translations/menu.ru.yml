@@ -1,0 +1,129 @@
+backend:
+    page:
+        h1_show: Страница
+        h1_list: Список страниц
+        h1_edit: Редактирование страницы
+        h1_create: Создание страницы
+        back_to_list: Назад к списку страниц
+        empty_list: Нет страниц
+        title: Заголовок
+        metatitle: Мета-заголовок
+        metadescription: Мета-описание
+        metakeywords: Ключевые слова
+        text: Текст страницы
+        position: Позиция в меню
+        parent: Родитель
+        background: Фон
+        not_found: Страница не существует
+        validation:
+            title: Вы не ввели заголовок!
+            position: Вы не ввели позицию!
+            position_integer: Вы некорректно ввели позицию!
+            position_min: Позициия не может быть меньше нуля!
+    background:
+        h1_show: Слайд
+        h1_list: Список слайдов
+        h1_edit: Редактирование слайда
+        h1_create: Добавление слайда
+        back_to_list: Назад к списку слайдов
+        empty_list: Нет слайдов
+        main: Отображать на главной?
+        main_yes: Да
+        main_no: Нет
+        video: Видео
+        img: Изображение
+        text: Текст
+        not_found: Слайд не существует
+    news:
+        h1_show: Новость
+        h1_list: Список новостей
+        h1_edit: Редактирование новости
+        h1_create: Создание новости
+        back_to_list: Назад к списку новостей
+        empty_list: Нет новостей
+        title: Заголовок новости
+        metatitle: Мета-заголовок
+        metadescription: Мета-описание
+        metakeywords: Ключевые слова
+        date: Дата
+        img: Изображение новости
+        description: Превью новости
+        text: Текст новости
+        sliderGallery: Слайдер
+        not_found: Новость не существует
+        validation:
+            title: Вы не ввели заголовок!
+            date: Вы не ввели дату!
+    service:
+        h1_show: Услуга
+        h1_list: Список услуг
+        h1_edit: Редактирование услуги
+        h1_create: Добавление услуги
+        back_to_list: Назад к списку услуг
+        empty_list: Нет услуг
+        title: Название услуги
+        metatitle: Мета-заголовок
+        metadescription: Мета-описание
+        metakeywords: Ключевые слова
+        date: Дата
+        img: Изображение услуги
+        description: Описание услуги
+        text: Текст услуги
+        sliderGallery: Слайдер
+        not_found: Услуга не существует
+        validation:
+            title: Вы не ввели название!
+            date: Вы не ввели дату!
+    project:
+        h1_show: Проект
+        h1_list: Список проектов
+        h1_edit: Редактирование проекта
+        h1_create: Добавление проекта
+        back_to_list: Назад к списку проектов
+        empty_list: Нет проектов
+        title: Название проекта
+        site: Адрес сайта
+        metaTitle: Мета-заголовок
+        metaDescription: Мета-описание
+        metaKeywords: Ключевые слова
+        img: Изображение проекта
+        images: Фотогалерея
+        description: Описание проекта
+        text: Текст страницы проекта
+        on_main: Отображение
+        not_found: Проект не существует
+        validation:
+            title: Вы не ввели ФИО!
+    partners:
+        h1_show: Партнер
+        h1_list: Список партнеров
+        h1_edit: Редактирование партнера
+        h1_create: Создание партнера
+        back_to_list: Назад к списку партнеров
+        empty_list: Нет партнеров
+        name: Название
+        img: Изображение партнера
+        position: Порядковый номер
+        link: URL Ссылка
+        not_found: Партнер не существует
+        validation:
+            name: Вы не ввели название!
+            position: Вы не ввели порядковый номер!
+            position_integer: Вы некорректно ввели порядковый номер!
+            position_min: Порядковый номер не может быть меньше нуля!
+            link: Вы не ввели ссылку!
+            link_not_valid: Вы ввели некорректную ссылку (http:// обязательно)!
+    actions: Действия
+    show: показать
+    edit: редактировать
+    update: сохранить
+    create: создать
+    delete: удалить
+
+frontend:
+    feedback:
+        placeholder:
+            name: Имя
+            phone: Телефон
+            email: Электронная почта
+            message: Сообщение

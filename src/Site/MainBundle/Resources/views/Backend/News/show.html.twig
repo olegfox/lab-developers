@@ -1,0 +1,60 @@
+{% extends 'SiteMainBundle:Backend:layout.html.twig' %}
+
+{% block content -%}
+    <h1>{{ 'backend.news.h1_show'|trans({}, 'menu') }}</h1>
+
+    {{ form(delete_form) }}
+
+    <table class="record_properties table table-striped table-bordered">
+        <tbody>
+        <tr>
+            <th>{{ 'backend.news.title'|trans({}, 'menu') }}</th>
+            <td>{{ entity.title }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.news.description'|trans({}, 'menu') }}</th>
+            <td>{{ entity.description }}</td>
+        </tr>
+        {% if entity.webPath %}
+            <tr>
+                <th>{{ 'backend.news.img'|trans({}, 'menu') }}</th>
+                <td><a href="{{ asset(entity.webPath) }}" target="_blank"><img src="{{ image(entity.webPath).resize(150) }}" alt="{{ entity.title }}" width="150px"/></a></td>
+            </tr>
+        {% endif %}
+        <tr>
+            <th>{{ 'backend.news.date'|trans({}, 'menu') }}</th>
+            <td>{{ entity.date|date('d.m.Y H:i') }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.news.metatitle'|trans({}, 'menu') }}</th>
+            <td>{{ entity.metaTitle }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.news.metadescription'|trans({}, 'menu') }}</th>
+            <td>{{ entity.metaDescription }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.news.metakeywords'|trans({}, 'menu') }}</th>
+            <td>{{ entity.metaKeywords }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions nav nav-pills">
+        <li>
+            <a href="{{ path('backend_news_index') }}">
+                {{ 'backend.news.back_to_list'|trans({}, 'menu') }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('backend_news_edit', { 'id': entity.id }) }}">
+                {{ 'backend.edit'|trans({}, 'menu') }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('backend_news_new') }}">
+                {{ 'backend.create'|trans({}, 'menu') }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

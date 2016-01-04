@@ -1,0 +1,30 @@
+backend_news_index:
+    path:     /
+    defaults: { _controller: "SiteMainBundle:Backend/News:index" }
+
+backend_news_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteMainBundle:Backend/News:show" }
+
+backend_news_new:
+    path:     /new
+    defaults: { _controller: "SiteMainBundle:Backend/News:new" }
+
+backend_news_create:
+    path:     /create
+    defaults: { _controller: "SiteMainBundle:Backend/News:create" }
+    methods:  POST
+
+backend_news_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteMainBundle:Backend/News:edit" }
+
+backend_news_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteMainBundle:Backend/News:update" }
+    methods:  [POST, PUT]
+
+backend_news_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteMainBundle:Backend/News:delete" }
+    methods:  [POST, DELETE]

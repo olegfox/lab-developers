@@ -1,0 +1,49 @@
+{% extends 'SiteMainBundle:Backend:layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/sitemain/backend/js/uploadify/uploadify.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content -%}
+    <h1>{{ 'backend.news.h1_edit'|trans({}, 'menu') }}</h1>
+
+    {{ form(delete_form) }}
+
+    {{ form_start(edit_form, { 'style': 'horizontal' , attr: {novalidate: 'novalidate'} }) }}
+    {{ form_row(edit_form.title) }}
+    {{ form_row(edit_form.date) }}
+    {{ form_row(edit_form.metaTitle) }}
+    {{ form_row(edit_form.metaDescription) }}
+    {{ form_row(edit_form.metaKeywords) }}
+    {% if entity.slider|length > 0 %}
+        <div class="photos">
+            {% for slider in entity.slider %}
+                <div class="item">
+                    <div class="inner-item">
+                        <div><input name="sliders[]" type="checkbox" value="{{ slider.id }}"/></div>
+                        <div><a href="{{ asset(slider.img) }}" target="_blank"><img src="{{ image(slider.img).zoomCrop(200, 200) }}" alt="{{ image(slider.img).zoomCrop(200, 200) }}"/></a></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {{ form_row(edit_form.sliderGallery) }}
+    {{ form_row(edit_form.description) }}
+    {{ form_row(edit_form.text) }}
+    {{ form_end(edit_form) }}
+
+    <ul class="record_actions nav nav-pills">
+        <li>
+            <a href="{{ path('backend_news_index') }}">
+                {{ 'backend.news.back_to_list'|trans({}, 'menu') }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/sitemain/backend/js/uploadify/jquery.uploadify.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/sitemain/backend/js/init_uploadify_slider_news.js') }}"></script>
+{% endblock %}

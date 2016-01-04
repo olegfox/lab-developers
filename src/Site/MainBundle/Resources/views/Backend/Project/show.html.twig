@@ -1,0 +1,72 @@
+{% extends 'SiteMainBundle:Backend:layout.html.twig' %}
+
+{% block content -%}
+    <h1>{{ 'backend.project.h1_show'|trans({}, 'menu') }}</h1>
+
+    {{ form(delete_form) }}
+
+    <table class="record_properties table table-striped table-bordered">
+        <tbody>
+        <tr>
+            <th>{{ 'backend.project.img'|trans({}, 'menu') }}</th>
+            <td>{% if entity.img|length > 0 %}<a href="{{ asset(entity.webPath) }}" target="_blank"><img src="{{ image(entity.webPath).resize(150) }}" alt="{{ entity.title }}" width="150px"/></a>{% endif %}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.on_main'|trans({}, 'menu') }}</th>
+            <td>{{ entity.onMain }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.title'|trans({}, 'menu') }}</th>
+            <td>{{ entity.title }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.site'|trans({}, 'menu') }}</th>
+            <td><a href="{{ entity.site }}">{{ entity.site }}</a></td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.description'|trans({}, 'menu') }}</th>
+            <td>{{ entity.description }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.metaTitle'|trans({}, 'menu') }}</th>
+            <td>{{ entity.metaTitle }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.metaDescription'|trans({}, 'menu') }}</th>
+            <td>{{ entity.metaDescription }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.metaKeywords'|trans({}, 'menu') }}</th>
+            <td>{{ entity.metakeywords }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'backend.project.images'|trans({}, 'menu') }}</th>
+            <td>
+                <div class="gallery">
+                    {% for image in entity.images %}
+                        <a href="{{ asset(image.img) }}" target="_blank"><img src="{{ image(image.img).zoomCrop(50, 50) }}" alt="{{ image(image.img).zoomCrop(50, 50) }}"/></a>
+                    {% endfor %}
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions nav nav-pills">
+        <li>
+            <a href="{{ path('backend_project_index') }}">
+                {{ 'backend.project.back_to_list'|trans({}, 'menu') }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('backend_project_edit', { 'id': entity.id }) }}">
+                {{ 'backend.edit'|trans({}, 'menu') }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('backend_project_new') }}">
+                {{ 'backend.create'|trans({}, 'menu') }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

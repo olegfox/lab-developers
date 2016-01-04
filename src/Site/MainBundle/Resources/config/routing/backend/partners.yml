@@ -1,0 +1,30 @@
+backend_partners_index:
+    path:     /
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:index" }
+
+backend_partners_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:show" }
+
+backend_partners_new:
+    path:     /new
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:new" }
+
+backend_partners_create:
+    path:     /create
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:create" }
+    methods:  POST
+
+backend_partners_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:edit" }
+
+backend_partners_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:update" }
+    methods:  [POST, PUT]
+
+backend_partners_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteMainBundle:Backend/Partners:delete" }
+    methods:  [POST, DELETE]

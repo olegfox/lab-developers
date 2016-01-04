@@ -1,0 +1,30 @@
+backend_service_index:
+    path:     /
+    defaults: { _controller: "SiteMainBundle:Backend/Service:index" }
+
+backend_service_show:
+    path:     /{id}/show
+    defaults: { _controller: "SiteMainBundle:Backend/Service:show" }
+
+backend_service_new:
+    path:     /new
+    defaults: { _controller: "SiteMainBundle:Backend/Service:new" }
+
+backend_service_create:
+    path:     /create
+    defaults: { _controller: "SiteMainBundle:Backend/Service:create" }
+    methods:  POST
+
+backend_service_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SiteMainBundle:Backend/Service:edit" }
+
+backend_service_update:
+    path:     /{id}/update
+    defaults: { _controller: "SiteMainBundle:Backend/Service:update" }
+    methods:  [POST, PUT]
+
+backend_service_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SiteMainBundle:Backend/Service:delete" }
+    methods:  [POST, DELETE]
