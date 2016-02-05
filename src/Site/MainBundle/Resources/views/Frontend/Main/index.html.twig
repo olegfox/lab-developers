@@ -31,6 +31,45 @@
     </section>
     <!-- end Main -->
 
+    <!-- Services start -->
+    <div id="services" class="container services">
+        <h2>Наши услуги</h2>
+        <div class="wrap">
+            <div class="box">
+                {% for service in services %}
+                    <figure>
+                        <img src="{{ asset(service.webPath) }}" alt=""/>
+                        <figcaption>
+                            <h1>{{ service.title }}</h1>
+                            <p>{{ service.description }}</p>
+                            {#<a href="#" class="btn btn-default">Подробнее</a>#}
+                        </figcaption>
+                    </figure>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    <!-- Services end -->
+
+    <!-- Clients start -->
+    <div id="clients" class="container clients">
+        <h2>Наши клиенты</h2>
+        <div class="wrap">
+            <div class="box">
+                {% for partner in partners %}
+                    <figure>
+                        <a href="{{ partner.link }}" target="_blank">
+                            <img src="{{ asset(partner.webPath) }}" alt=""/>
+                        </a>
+                    </figure>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    <!-- Clients end -->
+
     <!-- Our Work start -->
     <div id="our_work" class="container our-work">
         <h2>Наши работы</h2>
@@ -54,39 +93,6 @@
 
     </div>
     <!-- Our work end -->
-
-    <!-- Services start -->
-    <div id="services" class="container services">
-        <h2>Наши услуги</h2>
-        <div class="wrap">
-            <div class="box">
-                {% for service in services %}
-                    <figure>
-                        <img src="{{ asset(service.webPath) }}" alt=""/>
-                        <figcaption>
-                            <h1>{{ service.title }}</h1>
-                            <p>{{ service.description }}</p>
-                            <a href="#" class="btn btn-default">Подробнее</a>
-                        </figcaption>
-                    </figure>
-                {% endfor %}
-            </div>
-        </div>
-
-    </div>
-    <!-- Services end -->
-
-    <!-- Clients start -->
-    <div id="clients" class="container services">
-        <h2>Наши клиенты</h2>
-        <div class="wrap">
-            <div class="box">
-
-            </div>
-        </div>
-
-    </div>
-    <!-- Clients end -->
 
     <!-- Contacts start -->
     <div id="contacts" class="container contacts">

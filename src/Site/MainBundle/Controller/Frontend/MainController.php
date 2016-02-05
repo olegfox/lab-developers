@@ -17,6 +17,7 @@ class MainController extends Controller
         $repository_project = $this->getDoctrine()->getRepository('SiteMainBundle:Project');
         $repository_service = $this->getDoctrine()->getRepository('SiteMainBundle:Service');
         $repository_sliders = $this->getDoctrine()->getRepository('SiteMainBundle:Background');
+        $repository_partners = $this->getDoctrine()->getRepository('SiteMainBundle:Partners');
 
         if(is_null($slug)){
             $page = $repository_page->findOneBySlug('glavnaia');
@@ -26,6 +27,7 @@ class MainController extends Controller
 
         $projects = $repository_project->findBy(array('onMain' => true));
         $services = $repository_service->findAll();
+        $partners = $repository_partners->findAll();
         $sliders = $repository_sliders->findBy(array('main' => true));
         $form = $this->createCreateForm(new Feedback());
 
@@ -33,6 +35,7 @@ class MainController extends Controller
             'page' => $page,
             'projects' => $projects,
             'services' => $services,
+            'partners' => $partners,
             'sliders' => $sliders,
             'form' => $form->createView()
         ));
