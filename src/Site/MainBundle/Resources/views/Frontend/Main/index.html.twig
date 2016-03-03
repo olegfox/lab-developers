@@ -83,6 +83,9 @@
                             <div class="wrap">
                                 <h1>{{ project.title }}</h1>
                                 <p>{{ project.description }}</p>
+                                {% if project.price > 0 %}
+                                <p>{{ project.price|number_format }} руб.</p>
+                                {% endif %}
                                 <a href="{{ project.site }}" target="_blank" class="btn btn-portfolio">Открыть</a>
                             </div>
                         </figcaption>

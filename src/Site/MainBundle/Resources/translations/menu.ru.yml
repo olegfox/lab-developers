@@ -92,6 +92,7 @@ backend:
         text: Текст страницы проекта
         on_main: Отображение
         not_found: Проект не существует
+        price: Цена
         validation:
             title: Вы не ввели ФИО!
     partners:

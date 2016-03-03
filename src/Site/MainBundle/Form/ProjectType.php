@@ -54,6 +54,10 @@ class ProjectType extends AbstractType
                     "class" => "ckeditor"
                 )
             ))
+            ->add('price', null, array(
+                'required' => false,
+                'label' => 'backend.project.price'
+            ))
             ->add('file', 'file', array(
                 'required' => false,
                 'label' => 'backend.project.img'

@@ -99,6 +99,13 @@ class Project
     private $site;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer", nullable=true)
+     */
+    private $price;
+
+    /**
      * @var boolean
      *
      * @ORM\Column(name="on_main", type="boolean", nullable=true)
@@ -455,5 +462,28 @@ class Project
     public function getSite()
     {
         return $this->site;
+    }
+
+    /**
+     * Set onMain
+     *
+     * @param boolean $onMain
+     * @return Project
+     */
+    public function setOnMain($onMain)
+    {
+        $this->onMain = $onMain;
+
+        return $this;
+    }
+
+    /**
+     * Get onMain
+     *
+     * @return boolean 
+     */
+    public function getOnMain()
+    {
+        return $this->onMain;
     }
 }
