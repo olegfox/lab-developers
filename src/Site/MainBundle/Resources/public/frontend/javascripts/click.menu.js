@@ -22,6 +22,12 @@ $(function(){
     $("html, body").animate({scrollTop: $('#services').offset().top - $('nav').height()}, 1000);
   });
 
+    $(".main .sticker .wrap button").click(function(e){
+        e.preventDefault();
+        $("ul.menu li a").removeClass('current');
+        $("html, body").animate({scrollTop: $('#contacts').offset().top - $('nav').height()}, 1000);
+    });
+
   $("ul.menu li a").click(function(){
     $("ul.menu li a").removeClass('current');
     $(this).addClass('current');
