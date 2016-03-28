@@ -90,7 +90,8 @@ backend:
         images: Фотогалерея
         description: Описание проекта
         text: Текст страницы проекта
-        on_main: Отображение
+        on_main: Отображение на главной
+        on_show: Отображение
         not_found: Проект не существует
         price: Цена
         validation:

@@ -15,6 +15,14 @@ class ProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('onShow', 'choice', array(
+                'required' => true,
+                'label' => 'backend.project.on_show',
+                'choices' => array(
+                    false => 'Не показывать',
+                    true => 'Показывать'
+                )
+            ))
             ->add('onMain', 'choice', array(
                 'required' => true,
                 'label' => 'backend.project.on_main',

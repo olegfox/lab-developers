@@ -112,6 +112,13 @@ class Project
      */
     private $onMain = false;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="on_show", type="boolean", nullable=true)
+     */
+    private $onShow = true;
+
     public function getAbsolutePath()
     {
         return null === $this->img
@@ -508,5 +515,28 @@ class Project
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * Set onShow
+     *
+     * @param boolean $onShow
+     * @return Project
+     */
+    public function setOnShow($onShow)
+    {
+        $this->onShow = $onShow;
+
+        return $this;
+    }
+
+    /**
+     * Get onShow
+     *
+     * @return boolean 
+     */
+    public function getOnShow()
+    {
+        return $this->onShow;
     }
 }

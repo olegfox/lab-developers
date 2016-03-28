@@ -31,4 +31,60 @@ class Image
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      **/
     private $project;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set img
+     *
+     * @param string $img
+     * @return Image
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img
+     *
+     * @return string 
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * Set project
+     *
+     * @param \Site\MainBundle\Entity\Project $project
+     * @return Image
+     */
+    public function setProject(\Site\MainBundle\Entity\Project $project = null)
+    {
+        $this->project = $project;
+
+        return $this;
+    }
+
+    /**
+     * Get project
+     *
+     * @return \Site\MainBundle\Entity\Project 
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
 }

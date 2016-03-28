@@ -18,7 +18,7 @@ class WorkController extends Controller
 
         $page = $repository_page->findOneBySlug('glavnaia');
 
-        $projects = $repository_project->findAll();
+        $projects = $repository_project->findBy(array('onShow' => true));
 
         return $this->render('SiteMainBundle:Frontend/Work:index.html.twig', array(
             'page' => $page,

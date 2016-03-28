@@ -25,7 +25,7 @@ class MainController extends Controller
             $page = $repository_page->findOneBySlug($slug);
         }
 
-        $projects = $repository_project->findBy(array('onMain' => true));
+        $projects = $repository_project->findBy(array('onMain' => true, 'onShow' => true));
         $services = $repository_service->findAll();
         $partners = $repository_partners->findAll();
         $sliders = $repository_sliders->findBy(array('main' => true));
