@@ -48,15 +48,16 @@
     <!-- Navigation start -->
     <nav role="navigation">
         <div class="wrap">
-            <a href="/" class="logo">lab-developers<span>.com</span></a>
+            <a href="{{ path('frontend_homepage') }}" class="logo">lab-developers<span>.com</span></a>
             <button type="button" class="menu-button">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="tel" href="tel:+79627164140">+7 <span>(962)</span> 716-41-40</a>
-            {#{{ knp_menu_render('SiteMainBundle:FrontendMenuBuilder:mainMenu') }}#}
+            {{ knp_menu_render('SiteMainBundle:FrontendMenuBuilder:mainMenu') }}
+
+            <a class="tel" href="tel:+79627164140">Санкт-Петербург <br/> +7 <span>(962)</span> 716-41-40</a>
         </div>
     </nav>
     <!-- Navigation end -->
@@ -81,6 +82,7 @@
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="{{ asset('bundles/sitemain/frontend/javascripts/jquery.lazyload.min.js') }}"></script>
     <script src="{{ asset('bundles/sitemain/frontend/javascripts/main.js') }}"></script>
     <script src="{{ asset('bundles/sitemain/frontend/javascripts/click.menu.js') }}"></script>
     <!-- endbuild -->

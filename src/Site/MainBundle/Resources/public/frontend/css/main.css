@@ -26,6 +26,10 @@ html {
   line-height: 1;
 }
 
+a {
+    color: #e53935;
+}
+
 /* line 24, ../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
@@ -78,7 +82,7 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 20, main.scss */
   h1 {
     font-size: 24px;
@@ -166,7 +170,7 @@ textarea {
   text-align: center;
   margin-top: 80px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 85, main.scss */
   .btn.btn-main {
     font-size: 15px;
@@ -212,7 +216,7 @@ textarea {
   right: 0;
   background: url("../images/arrow.png") no-repeat;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 120, main.scss */
   .icon-down {
     width: 25px;
@@ -245,7 +249,7 @@ nav {
 nav.black {
   background: #000;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 148, main.scss */
     nav {
       height: 68px;
@@ -268,6 +272,11 @@ nav .wrap .logo {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 375px) {
+    nav .wrap .logo {
+        font-size: 18px;
+    }
+}
 /* line 165, main.scss */
 nav .wrap .logo span {
   color: #e53935;
@@ -288,6 +297,11 @@ nav .wrap button.menu-button {
   border-radius: 4px;
   cursor: pointer;
 }
+@media screen and (max-width: 1160px) {
+    nav .wrap button.menu-button {
+        padding: 0;
+    }
+}
 /* line 183, main.scss */
 nav .wrap button.menu-button:focus {
   outline: 0;
@@ -307,17 +321,19 @@ nav .wrap button.menu-button span.icon-bar + .icon-bar {
 
 nav .wrap .tel{
     color: #fff;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: bold;
     float: right;
-    margin-top: 10px;
+    margin-top: 0px;
+    line-height: 24px;
+    text-align: center;
 }
 
 nav .wrap .tel span{
     color: #e53935;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 171, main.scss */
   nav .wrap button.menu-button {
     display: block;
@@ -348,11 +364,16 @@ nav .wrap ul.menu li a {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
+@media screen and (max-width: 375px) {
+    nav .wrap ul.menu li a {
+        font-size: 14px;
+    }
+}
 /* line 213, main.scss */
 nav .wrap ul.menu li a:hover, nav .wrap ul.menu li.current a {
   color: #e53935;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 200, main.scss */
   nav .wrap ul.menu {
     float: none;
@@ -375,12 +396,13 @@ nav .wrap ul.menu li a:hover, nav .wrap ul.menu li.current a {
     padding: 7px 0px 5px 20px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 155, main.scss */
   nav .wrap {
     position: relative;
     height: 30px;
-    max-width: 1000px;
+    line-height: 30px;
+    max-width: 1160px;
     padding: 20px 20px 18px 20px;
     margin: 0 auto;
     z-index: 2;
@@ -419,7 +441,7 @@ section.home .black {
 .main h1 {
   margin-bottom: 35px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 274, main.scss */
   .main h1 {
     margin-bottom: 25px;
@@ -433,7 +455,7 @@ section.home .black {
   font-weight: bold;
   text-transform: uppercase;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 280, main.scss */
   .main p {
     font-size: 19px;
@@ -452,11 +474,17 @@ section.home .black {
   width: 50%;
   margin-bottom: 25px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 301, main.scss */
   .our-work figure {
-    width: 100%;
+    width: 50%;
   }
+}
+@media screen and (max-width: 375px) {
+    /* line 301, main.scss */
+    .our-work figure {
+        width: 100%;
+    }
 }
 /* line 309, main.scss */
 .our-work figure img {
@@ -525,7 +553,7 @@ section.home .black {
 .our-work.our-work-all figure {
   width: 33.33%;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 359, main.scss */
   .our-work.our-work-all figure {
     width: 100%;
@@ -551,11 +579,17 @@ section.home .black {
   text-align: center;
   margin-bottom: 45px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 378, main.scss */
   .services .wrap figure {
     width: 50%;
   }
+}
+@media screen and (max-width: 375px) {
+    /* line 378, main.scss */
+    .services .wrap figure {
+        width: 100%;
+    }
 }
 /* line 387, main.scss */
 .services .wrap figure.last h1 {
@@ -600,10 +634,16 @@ section.home .black {
     margin-bottom: 45px;
     vertical-align: middle;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
     /* line 378, main.scss */
     .clients .wrap figure {
         width: 50%;
+    }
+}
+@media screen and (max-width: 375px) {
+    /* line 378, main.scss */
+    .clients .wrap figure {
+        width: 100%;
     }
 }
 /* line 387, main.scss */
@@ -659,7 +699,7 @@ section.home .black {
 .contacts .wrap .col-50.last {
   margin-left: 5%;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 424, main.scss */
   .contacts .wrap .col-50 {
     width: 100%;
@@ -676,7 +716,9 @@ section.home .black {
 }
 /* line 447, main.scss */
 .contacts .wrap form {
+  display: block;
   text-align: left;
+  padding: 0 15px;
 }
 .contacts .flash-notice{
     position: relative;
@@ -696,9 +738,10 @@ section.home .black {
   /* text color */
   font-size: 15px;
   height: 35px;
-  width: 308px;
-  padding: 0px 14px;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 308px;
+  padding: 0 14px;
+  margin: 0 auto 20px auto;
   border: solid 2px #bdc3c7;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -708,6 +751,7 @@ section.home .black {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   /* prevents bg color from leaking outside the border */
+  box-sizing: border-box;
 }
 .contacts .wrap form input[type="text"].error,
 .contacts .wrap form input[type="email"].error{
@@ -725,9 +769,10 @@ section.home .black {
   /* text color */
   font-size: 15px;
   height: 52px;
-  width: 308px;
+  width: 100%;
+  max-width: 308px;
   padding: 12px 14px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   border: solid 2px #bdc3c7;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -738,6 +783,7 @@ section.home .black {
   background-clip: padding-box;
   /* prevents bg color from leaking outside the border */
   resize: none;
+  box-sizing: border-box;
 }
 .contacts .wrap form textarea.error{
     border: solid 2px #e43834;
@@ -761,10 +807,10 @@ section.home .black {
 .contacts .wrap form button[type="submit"]:focus{
     outline: 0;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
   /* line 447, main.scss */
   .contacts .wrap form {
-    display: inline-block;
+    display: block;
     text-align: center;
   }
 }
@@ -797,7 +843,13 @@ section.home .black {
   width: 37px;
   height: 30px;
 }
-@media screen and (max-width: 900px) {
+.contacts .social a.vk {
+    background: url("../images/vk.png") center center no-repeat;
+    background-size: contain;
+    width: 37px;
+    height: 37px;
+}
+@media screen and (max-width: 1160px) {
   /* line 505, main.scss */
   .contacts .social {
     bottom: 15px;
@@ -844,7 +896,7 @@ section.home .black {
     bottom: 0px;
     margin: auto auto;
     text-align: center;
-    max-width: 1000px;
+    max-width: 1160px;
     left: 0;
     right: 0;
 }
@@ -853,6 +905,12 @@ section.home .black {
     width: auto !important;
     height: auto !important;
     padding: 45px;
+}
+
+@media screen and (max-width: 375px) {
+    .main .sticker .wrap {
+        padding: 15px;
+    }
 }
 
 .main .sticker .wrap button {
@@ -906,6 +964,14 @@ section.home .black {
     line-height: 30px;
     text-shadow: rgba(0, 0, 0, 0.38) 2px 0px 4px, rgba(0, 0, 0, 0.38) 2px 0px 4px, rgba(0, 0, 0, 0.38) 2px 0px 4px;
 }
+@media screen and (max-width: 375px) {
+    .main .sticker h2 {
+        font-size: 24px;
+    }
+    .main .sticker p {
+        font-size: 14px;
+    }
+}
 /* line 106, ../sass/main.sass */
 .main .slick-slider {
     height: 100%;
@@ -942,8 +1008,11 @@ section.home .black {
     position: relative;
     height: 105px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1160px) {
     .null-block {
         height: 68px;
+    }
+    nav .wrap .tel {
+        display: none;
     }
 }

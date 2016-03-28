@@ -23,67 +23,85 @@ $(window).resize(function(){
 function init(){
   var $container = $('.container');
 
-  $('#our_work').find('.box').imagesLoaded(function(){
-    $('#our_work').find('.box').masonry({
-      itemSelector: 'figure',
-      columnWidth: function( containerWidth ) {
-        if($(window).width() <= 900){
-          return containerWidth;// depends how many boxes per row
-        }else{
-          return containerWidth /2;// depends how many boxes per row
-        }
-      }(), // () to execute the anonymous function right away and use its result
-      isAnimated: true
-    });
+  $("img.lazy").lazyload({
+      load: function() {
+          initWork();
+      }
   });
 
-    //  Инициализация слайдера на главной
-    jQuery('.slider').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true,
-        autoplay: false,
-        autoplaySpeed: 3000
-    });
+  var initWork = function() {
+      $('#our_work').find('.box').imagesLoaded(function(){
+          $('#our_work').find('.box').masonry({
+              itemSelector: 'figure',
+              columnWidth: function( containerWidth ) {
+                  if($(window).width() <= 900){
+                      return containerWidth;// depends how many boxes per row
+                  }else{
+                      return containerWidth /2;// depends how many boxes per row
+                  }
+              }(), // () to execute the anonymous function right away and use its result
+              isAnimated: true
+          });
+      });
+  };
 
-    jQuery('.slider').on('init setPosition', function (slick) {
-        jQuery('.slider .slick-slide div').css({
-            'height': jQuery('body').height(),
-            'width': jQuery('body').width()
-        });
-    });
+    initWork();
 
-    jQuery('.slider').on('afterChange', function (slick, currentSlide) {
-        var slide = jQuery('.slider .slick-slide[data-slick-index="'+currentSlide.currentSlide+'"]');
-        if(slide.hasClass('video')){
-            var videoObject = slide.data('vide').getVideoObject();
-            videoObject.play();
-        }
-    });
-
-    jQuery('.slider').on('beforeChange', function (slick, currentSlide, nextSlide) {
-        var slide = jQuery('.slider .slick-slide[data-slick-index="'+nextSlide.currentSlide+'"]');
-        if(slide.hasClass('video')){
-            var videoObject = slide.data('vide').getVideoObject();
-            videoObject.stop();
-        }
-    });
-
-    jQuery('.slider .video').each(function (i, e) {
-        jQuery(e).vide({
-            mp4: jQuery(e).data('video')
-        }, {
-            volume: 1,
-            playbackRate: 1,
-            muted: true,
+    var initSlider = function() {
+        //  Инициализация слайдера на главной
+        jQuery('.slider').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true,
             autoplay: false,
-            loop: true,
-            position: '50% 50%', // Similar to the CSS `background-position` property.
-            posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
-            resizing: true // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing...
+            autoplaySpeed: 3000
         });
+
+        jQuery('.slider').on('init setPosition', function (slick) {
+            jQuery('.slider .slick-slide div').css({
+                'height': jQuery('body').height(),
+                'width': jQuery('body').width()
+            });
+        });
+
+        jQuery('.slider').on('afterChange', function (slick, currentSlide) {
+            var slide = jQuery('.slider .slick-slide[data-slick-index="'+currentSlide.currentSlide+'"]');
+            if(slide.hasClass('video')){
+                var videoObject = slide.data('vide').getVideoObject();
+                videoObject.play();
+            }
+        });
+
+        jQuery('.slider').on('beforeChange', function (slick, currentSlide, nextSlide) {
+            var slide = jQuery('.slider .slick-slide[data-slick-index="'+nextSlide.currentSlide+'"]');
+            if(slide.hasClass('video')){
+                var videoObject = slide.data('vide').getVideoObject();
+                videoObject.stop();
+            }
+        });
+
+        jQuery('.slider .video').each(function (i, e) {
+            jQuery(e).vide({
+                mp4: jQuery(e).data('video')
+            }, {
+                volume: 1,
+                playbackRate: 1,
+                muted: true,
+                autoplay: false,
+                loop: true,
+                position: '50% 50%', // Similar to the CSS `background-position` property.
+                posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+                resizing: true // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing...
+            });
+        });
+    };
+
+    initSlider();
+
+    $(window).resize(function() {
+        initSlider();
     });
 
     /* Validate and Submit Question form */
