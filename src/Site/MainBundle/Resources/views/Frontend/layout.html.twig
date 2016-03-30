@@ -1,14 +1,12 @@
 {% extends "::base.html.twig" %}
 
 {% block stylesheets %}
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="{{ asset('bundles/sitemain/frontend/css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('bundles/sitemain/frontend/css/main.css') }}">
+    {% stylesheets
+    'bundles/sitemain/frontend/css/slick.css'
+    'bundles/sitemain/frontend/css/main.css'
+    filter='yui_css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/> 
+    {% endstylesheets %}
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="{{ asset('bundles/sitemain/frontend/bower_components/modernizr/modernizr.js') }}"></script>
@@ -68,22 +66,16 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js(.) scripts/plugins.js -->
-    <script src="{{ asset('bundles/sitemain/frontend/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('bundles/sitemain/frontend/bower_components/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('bundles/sitemain/frontend/bower_components/masonry/dist/masonry.pkgd.min.js') }}"></script>
-    <script src="{{ asset('bundles/sitemain/frontend/bower_components/vide/dist/jquery.vide.js') }}"></script>
-    <script src="{{ asset('bundles/sitemain/frontend/bower_components/slick-carousel/slick/slick.min.js') }}"></script>
-    <!-- endbuild -->
-
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="{{ asset('bundles/sitemain/frontend/javascripts/jquery.lazyload.min.js') }}"></script>
-    <script src="{{ asset('bundles/sitemain/frontend/javascripts/main.js') }}"></script>
-    <script src="{{ asset('bundles/sitemain/frontend/javascripts/click.menu.js') }}"></script>
-    <!-- endbuild -->
+    {% javascripts
+    'bundles/sitemain/frontend/bower_components/jquery/dist/jquery.min.js'
+    'bundles/sitemain/frontend/bower_components/imagesloaded/imagesloaded.pkgd.min.js'
+    'bundles/sitemain/frontend/bower_components/masonry/dist/masonry.pkgd.min.js'
+    'bundles/sitemain/frontend/bower_components/vide/dist/jquery.vide.js'
+    'bundles/sitemain/frontend/bower_components/slick-carousel/slick/slick.min.js'
+    'bundles/sitemain/frontend/javascripts/jquery.lazyload.min.js'
+    'bundles/sitemain/frontend/javascripts/main.js'
+    'bundles/sitemain/frontend/javascripts/click.menu.js'
+    filter='yui_js' %}
+    <script type="text/javascript" data-src="{{ asset_url }}" id="scripts"></script>
+    {% endjavascripts %}
 {% endblock %}
