@@ -972,6 +972,14 @@ section.home .black {
         font-size: 14px;
     }
 }
+
+.main .slider {
+    height: 100%;
+}
+
+.main .slider > div {
+    height: 100%;
+}
 /* line 106, ../sass/main.sass */
 .main .slick-slider {
     height: 100%;
