@@ -1,13 +1,14 @@
 {% extends "::base.html.twig" %}
 
 {% block stylesheets %}
-    {% stylesheets
-    'bundles/sitemain/frontend/css/slick.css'
-    'bundles/sitemain/frontend/css/main.css'
-    filter='yui_css' %}
-    <link rel="stylesheet" href="{{ asset_url }}"/> 
-    {% endstylesheets %}
-    <!-- endbuild -->
+    <style type="text/css">
+        html, body {
+            background: #000;
+        }
+        body {
+            opacity: 0;
+        }
+    </style>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="{{ asset('bundles/sitemain/frontend/bower_components/modernizr/modernizr.js') }}"></script>
     <!-- endbuild -->
@@ -65,6 +66,12 @@
 {% endblock %}
 
 {% block javascripts %}
+    {% stylesheets
+    'bundles/sitemain/frontend/css/slick.css'
+    'bundles/sitemain/frontend/css/main.css'
+    filter='yui_css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
     {{ parent() }}
     {% javascripts
     'bundles/sitemain/frontend/bower_components/jquery/dist/jquery.min.js'
