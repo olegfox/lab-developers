@@ -23,6 +23,10 @@ class MainController extends Controller
             $page = $repository_page->findOneBySlug('glavnaia');
         }else{
             $page = $repository_page->findOneBySlug($slug);
+
+            if(!$page) {
+                throw $this->createNotFoundException($this->get('translator')->trans('Страница не найдена'));
+            }
         }
 
         $projects = $repository_project->findBy(array('onMain' => true, 'onShow' => true));
