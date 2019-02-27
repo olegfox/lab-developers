@@ -23,11 +23,12 @@ $(window).resize(function(){
 function init(){
   var $container = $('.container');
 
-  $("img.lazy").lazyload({
-      load: function() {
-          initWork();
-      }
-  });
+  // $("img.lazy").lazyload({
+  //     threshold : 200,
+  //     load: function() {
+  //         initWork();
+  //     }
+  // });
 
   var initWork = function() {
       $('#our_work').find('.box').imagesLoaded(function(){
@@ -101,7 +102,7 @@ function init(){
     initSlider();
 
     $(window).resize(function() {
-        initSlider();
+        jQuery('.slider').slick('resize');
     });
 
     /* Validate and Submit Question form */

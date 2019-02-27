@@ -2,13 +2,8 @@
 
 {#{% from 'SiteMainBundle:Frontend/GroupCompany:macros.html.twig' import listTabGroup %}#}
 
-{% block title %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}{{ mediaOne.metaTitle }}{% elseif app.request.attributes.get('_route') == 'frontend_news_one' %}{{ newsOne.metaTitle }}{% elseif app.request.attributes.get('_route') == 'frontend_comments_one' %}{{ commentsOne.metaTitle }}{% else %}{{ page.metaTitle }}{% endif %}{% endblock %}
-{% block meta_description %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}{{ mediaOne.metaDescription }}{% elseif app.request.attributes.get('_route') == 'frontend_news_one' %}{{ newsOne.metaDescription }}{% elseif app.request.attributes.get('_route') == 'frontend_comments_one' %}{{ commentsOne.metaDescription }}{% else %}{{ page.metaDescription }}{% endif %}{% endblock %}
-{% block meta_keywords %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}{{ mediaOne.metaKeywords }}{% elseif app.request.attributes.get('_route') == 'frontend_news_one' %}{{ newsOne.metaKeywords }}{% elseif app.request.attributes.get('_route') == 'frontend_comments_one' %}{{ commentsOne.metaDescription }}{% else %}{{ page.metaKeywords }}{% endif %}{% endblock %}
-{% block og_title %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}{{ mediaOne.title }}{% elseif app.request.attributes.get('_route') == 'frontend_news_one' %}{{ newsOne.metaTitle }}{% elseif app.request.attributes.get('_route') == 'frontend_comments_one' %}{{ commentsOne.metaTitle }}{% else %}{{ page.metaTitle }}{% endif %}{% endblock %}
-{% block og_description %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}{{ mediaOne.metaDescription }}{% else %}{{ page.metaDescription }}{% endif %}{% endblock %}
-{% block og_image %}{% if app.request.attributes.get('_route') == 'frontend_news_one' %}http://{{ app.request.host }}{{ image(newsOne.webPath).zoomCrop(300, 300) }}{% endif %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}http://{{ app.request.host }}{{ image(mediaOne.webPath).zoomCrop(300, 300) }}{% endif %}{% if app.request.attributes.get('_route') == 'frontend_comments_one' %}http://{{ app.request.host }}{{ image(commentsOne.webPath).zoomCrop(300, 300) }}{% endif %}{% endblock %}
-{% block image_src %}{% if app.request.attributes.get('_route') == 'frontend_news_one' %}http://{{ app.request.host }}{{ image(newsOne.webPath).zoomCrop(300, 300) }}{% endif %}{% if app.request.attributes.get('_route') == 'frontend_media_one' %}http://{{ app.request.host }}{{ image(mediaOne.webPath).zoomCrop(300, 300) }}{% endif %}{% if app.request.attributes.get('_route') == 'frontend_comments_one' %}http://{{ app.request.host }}{{ image(commentsOne.webPath).zoomCrop(300, 300) }}{% endif %}{% endblock %}
+{% block og_image %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
+{% block image_src %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
 
 {% block content %}
     <!-- Main -->
@@ -20,15 +15,14 @@
                         <div class="sticker revealOnScroll" data-animation="fadeInRight">
                             <div class="wrap">
                                 {{ slider.text|raw }}
-                                <button>Заказать сайт</button>
+                                <button class="btn btn-main">Заказать сайт</button>
                             </div>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
-
-        <a href="#" class="icon-arrow revealOnScroll" data-animation="fadeInUp"></a>
+        
     </section>
     <!-- end Main -->
 
@@ -79,7 +73,7 @@
             {% for project in projects %}
                 <figure>
                     <div class="fig-wrap">
-                        <img class="lazy" data-original="{{ asset(project.webPath) }}" alt=""/>
+                        <img class="lazy" src="{{ image(project.webPath).cropResize(400).jpeg(100) }}" alt=""/>
                         <figcaption>
                             <div class="wrap">
                                 <h1>{{ project.title }}</h1>

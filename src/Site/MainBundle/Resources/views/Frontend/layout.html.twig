@@ -1,5 +1,8 @@
 {% extends "::base.html.twig" %}
 
+{% block og_image %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
+{% block image_src %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
+
 {% block stylesheets %}
     <style type="text/css">
         html, body {
@@ -15,6 +18,7 @@
 {% endblock %}
 
 {% block body %}
+    {% spaceless %}
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (d, w, c) {
@@ -55,18 +59,19 @@
             </button>
 
             {{ knp_menu_render('SiteMainBundle:FrontendMenuBuilder:mainMenu') }}
-
-            <a class="tel" href="tel:+79627164140">Санкт-Петербург <br/> +7 <span>(962)</span> 716-41-40</a>
+            
         </div>
     </nav>
     <!-- Navigation end -->
 
     {% block content %}
     {% endblock %}
+    {% endspaceless %}
 {% endblock %}
 
 {% block javascripts %}
     {% stylesheets
+    'bundles/sitemain/frontend/css/fonts.css'
     'bundles/sitemain/frontend/css/slick.css'
     'bundles/sitemain/frontend/css/main.css'
     filter='yui_css' %}
@@ -83,6 +88,6 @@
     'bundles/sitemain/frontend/javascripts/main.js'
     'bundles/sitemain/frontend/javascripts/click.menu.js'
     filter='yui_js' %}
-    <script type="text/javascript" data-src="{{ asset_url }}" id="scripts"></script>
+    <script type="text/javascript" src="{{ asset_url }}" id="scripts"></script>
     {% endjavascripts %}
 {% endblock %}

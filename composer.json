@@ -40,7 +40,8 @@
         "stof/doctrine-extensions-bundle": "~1.1@dev",
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery":  "1.11.*",
-        "presta/sitemap-bundle": "^1.4" 
+        "presta/sitemap-bundle": "^1.4",
+        "symfony/requirements-checker": "^1.1" 
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

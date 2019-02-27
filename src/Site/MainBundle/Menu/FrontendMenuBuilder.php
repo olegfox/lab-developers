@@ -32,7 +32,15 @@ class FrontendMenuBuilder extends ContainerAware
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_work_index'
                 ));
-            } else{
+            } elseif ($m->getSlug() == 'o-nas'){
+                $menu->addChild($m->getTitle(), array(
+                    'route' => 'frontend_page_about'
+                ));             
+            } elseif ($m->getSlug() == 'uslughi-i-tsieny'){
+                $menu->addChild($m->getTitle(), array(
+                    'route' => 'frontend_page_price'
+                ));                       
+            } else{  
                 if($m->getSlug() != 'glavnaia'){
                     $menu->addChild($m->getTitle(), array(
                         'route' => 'frontend_page_index',

@@ -15,6 +15,18 @@ frontend_page_contacts:
     path:     /kontakty
     defaults: { _controller: "SiteMainBundle:Frontend/Main:contacts" }
 
+frontend_page_about:
+    path:     /o-nas
+    defaults: { _controller: "SiteMainBundle:Frontend/About:index" }
+
+frontend_page_price:
+    path:     /uslughi-i-tsieny
+    defaults: { _controller: "SiteMainBundle:Frontend/Price:index" }
+
+frontend_page_service:
+    path:     /uslugi
+    defaults: { _controller: "SiteMainBundle:Frontend/Service:index" }
+
 frontend_page_index:
     path:     /{slug}
     defaults: { _controller: "SiteMainBundle:Frontend/Main:index" }

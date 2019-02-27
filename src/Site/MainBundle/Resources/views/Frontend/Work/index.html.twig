@@ -18,7 +18,7 @@
             {% for project in projects %}
                 <figure>
                     <div class="fig-wrap">
-                        <img class="lazy" data-original="{{ asset(project.webPath) }}" alt=""/>
+                        <img class="lazy" src="{{ image(project.webPath).cropResize(400).jpeg(100) }}" alt=""/>
                         <figcaption>
                             <div class="wrap">
                                 <h1>{{ project.title }}</h1>
