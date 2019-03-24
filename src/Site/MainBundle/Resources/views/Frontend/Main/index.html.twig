@@ -1,9 +1,8 @@
 {% extends 'SiteMainBundle:Frontend:layout.html.twig' %}
 
-{#{% from 'SiteMainBundle:Frontend/GroupCompany:macros.html.twig' import listTabGroup %}#}
-
-{% block og_image %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
-{% block image_src %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
+{% block title %}{{ page.metaTitle }}{% endblock %}
+{% block meta_description %}{{ page.metaDescription }}{% endblock %}
+{% block meta_keywords %}{{ page.metaKeywords }}{% endblock %}
 
 {% block content %}
     <!-- Main -->
@@ -110,7 +109,7 @@
             </div><div class="col-50 last">
                 <p>По всем вопросам можете обращаться</p>
                 <p>по Email: <a href="mailto:info@lab-developers.com">info@lab-developers.com</a></p>
-                <p>или по телефону: <span>+7 (962) 716-41-40</span></p>
+                <p>или по телефону: <a href="tel:+79657527048"><span>+7 (965) 752-70-48</span></p>
                 <div class="social">
                     <a href="http://vk.com/lab_developers" class="vk" title="vk" target="_blank"></a>
                 </div>

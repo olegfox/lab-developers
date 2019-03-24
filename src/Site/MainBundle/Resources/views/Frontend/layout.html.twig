@@ -1,8 +1,5 @@
 {% extends "::base.html.twig" %}
 
-{% block og_image %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
-{% block image_src %}http://{{ app.request.host }}{{ image('bundles/sitemain/frontend/images/logo.jpg').cropResize(300, 300) }}{% endblock %}
-
 {% block stylesheets %}
     <style type="text/css">
         html, body {
