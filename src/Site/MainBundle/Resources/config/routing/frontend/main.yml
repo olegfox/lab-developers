@@ -24,12 +24,8 @@ frontend_page_about:
     defaults: { _controller: "SiteMainBundle:Frontend/About:index" }
 
 frontend_page_price:
-    path:     /uslughi-i-tsieny
+    path:     /uslughi
     defaults: { _controller: "SiteMainBundle:Frontend/Price:index" }
-
-frontend_page_service:
-    path:     /uslugi
-    defaults: { _controller: "SiteMainBundle:Frontend/Service:index" }
 
 frontend_page_index:
     path:     /{slug}
