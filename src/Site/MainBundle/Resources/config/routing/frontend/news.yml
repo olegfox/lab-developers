@@ -1,6 +1,6 @@
-frontend_news_one_ajax:
-    path:     /ajax/{slug}
-    defaults: { _controller: "SiteMainBundle:Frontend/News:ajaxOne" }
+frontend_news_all:
+    path:     /
+    defaults: { _controller: "SiteMainBundle:Frontend/News:index" }
 
 frontend_news_one:
     path:     /{slug}

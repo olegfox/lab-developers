@@ -11,6 +11,10 @@ frontend_work:
     resource: "@SiteMainBundle/Resources/config/routing/frontend/work.yml"
     prefix: /nashi-raboty
 
+frontend_blog:
+    resource: "@SiteMainBundle/Resources/config/routing/frontend/news.yml"
+    prefix: /blog
+
 frontend_page_contacts:
     path:     /kontakty
     defaults: { _controller: "SiteMainBundle:Frontend/Main:contacts" }
@@ -30,3 +34,7 @@ frontend_page_service:
 frontend_page_index:
     path:     /{slug}
     defaults: { _controller: "SiteMainBundle:Frontend/Main:index" }
+
+frontend_sitemap_index:
+    path:     /sitemap/sitemap.xml
+    defaults: { _controller: "SiteMainBundle:Frontend/Main:sitemap" }    

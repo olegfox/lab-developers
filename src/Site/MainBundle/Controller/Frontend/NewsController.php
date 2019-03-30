@@ -9,6 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NewsController extends Controller
 {
+    public function indexAction()
+    {
+        $repository_news = $this->getDoctrine()->getRepository('SiteMainBundle:News');
+        $news = $repository_news->findAll();
+    }
+
     /**
      * Get one news
      *

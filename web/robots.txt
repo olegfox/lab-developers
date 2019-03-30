@@ -4,3 +4,4 @@
 User-agent: *
 Disallow:
 Host: lab-developers.com
+Sitemap: http://lab-developers.com/sitemap/sitemap.xml
