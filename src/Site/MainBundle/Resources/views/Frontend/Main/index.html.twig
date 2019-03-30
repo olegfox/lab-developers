@@ -46,24 +46,6 @@
     </div>
     <!-- Services end -->
 
-    <!-- Clients start -->
-    <div id="clients" class="container clients">
-        <h2>Наши клиенты</h2>
-        <div class="wrap">
-            <div class="box">
-                {% for partner in partners %}
-                    <figure>
-                        <a href="{{ partner.link }}" target="_blank">
-                            <img src="{{ asset(partner.webPath) }}" alt=""/>
-                        </a>
-                    </figure>
-                {% endfor %}
-            </div>
-        </div>
-
-    </div>
-    <!-- Clients end -->
-
     <!-- Our Work start -->
     <div id="our_work" class="container our-work">
         <h2>Наши работы</h2>
