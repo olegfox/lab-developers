@@ -13,7 +13,7 @@ class PriceController extends Controller
     {
         $repository_page = $this->getDoctrine()->getRepository('SiteMainBundle:Page');
 
-        $page = $repository_page->findOneBySlug('uslughi-i-tsieny'); 
+        $page = $repository_page->findOneBySlug('uslughi'); 
 
         if(!$page) {
             throw $this->createNotFoundException($this->get('translator')->trans('Страница не найдена'));
