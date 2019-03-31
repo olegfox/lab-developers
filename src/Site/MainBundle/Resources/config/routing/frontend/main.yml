@@ -13,7 +13,7 @@ frontend_work:
 
 frontend_blog:
     resource: "@SiteMainBundle/Resources/config/routing/frontend/news.yml"
-    prefix: /blog
+    prefix: /blogh
 
 frontend_page_contacts:
     path:     /kontakty

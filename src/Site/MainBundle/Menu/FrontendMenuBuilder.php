@@ -28,6 +28,10 @@ class FrontendMenuBuilder extends ContainerAware
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_page_contacts'
                 ));
+            } elseif ($m->getSlug() == 'blog'){
+                $menu->addChild($m->getTitle(), array(
+                    'route' => 'frontend_news_all'
+                ));             
             } elseif ($m->getSlug() == 'nashi-raboty'){
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_work_index'

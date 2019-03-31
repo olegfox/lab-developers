@@ -1091,3 +1091,37 @@ section.home .black {
   }
 
 }
+
+ul.news-list {
+  margin: 0;
+  font-size: 0;
+}
+ul.news-list li {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  margin: 0 0 28px 0;
+  width: 50%;
+}
+ul.news-list li > div {
+  margin: 0 15px;
+}
+ul.news-list li a img {
+  width: 100%;
+  display: block;
+}
+ul.news-list li .info {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  padding: 15px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  ul.news-list li {
+    width: 100%;
+  }
+}
