@@ -1150,3 +1150,22 @@ ul.news-list li .info {
 .backToTop.show {
   opacity: 1;
 }
+nav .preset {
+  float: right;
+  padding-left: 30px;
+}
+nav .preset .phone {
+  padding-bottom: 5px;
+}
+nav .preset .phone a {
+  color: #fff;
+}
+nav .preset .email a {
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  nav .preset {
+    display: none;
+  }
+}
