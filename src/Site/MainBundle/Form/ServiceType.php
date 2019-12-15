@@ -50,6 +50,18 @@ class ServiceType extends AbstractType
                 'required' => false,
                 'label' => 'backend.service.img'
             ))
+            ->add('onMain', 'choice', array(
+                'required' => true,
+                'label' => 'backend.project.on_main',
+                'choices' => array(
+                    false => 'Не показывать на главной',
+                    true => 'Показывать на главной'
+                )
+            ))
+            ->add('price', null, array(
+                'required' => false,
+                'label' => 'backend.project.price'
+            ))
         ;
     }
     

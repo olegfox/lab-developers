@@ -5,13 +5,15 @@
 {% block title %}{{ page.metaTitle }}{% endblock %}
 {% block meta_description %}{{ page.metaDescription }}{% endblock %}
 {% block meta_keywords %}{{ page.metaKeywords }}{% endblock %}
+{% block og_title %}{{ page.metaTitle }}{% endblock %}
+{% block og_description %}{{ page.metaDescription }}{% endblock %}
 
 {% block content %}
-    <div class="null-block"></div>
+    <div class="text">
+    {{ wo_render_breadcrumbs() }}
+    <h1>{{ page.title }}</h1>
     <!-- Our Work start -->
-    <div id="our_work" class="container our-work">
-        <h2>Наши работы</h2>
-
+    <div id="our_work" class="our-work">
         <div class="box">
             {% for project in projects %}
                 <figure>
@@ -19,12 +21,12 @@
                         <img class="lazy" src="{{ image(project.webPath).cropResize(400).jpeg(100) }}" alt=""/>
                         <figcaption>
                             <div class="wrap">
-                                <h1>{{ project.title }}</h1>
+                                <h2>{{ project.title }}</h2>
                                 <p>{{ project.description }}</p>
                                 {% if project.price > 0 %}
                                     <p>{{ project.price|number_format }} руб.</p>
                                 {% endif %}
-                                <a href="{{ project.site }}" target="_blank" class="btn btn-portfolio">Открыть</a>
+                                <a href="{{ project.site }}" rel="nofollow" target="_blank" class="btn btn-portfolio">Открыть</a>
                             </div>
                         </figcaption>
                     </div>
@@ -34,4 +36,5 @@
 
     </div>
     <!-- Our work end -->
+    </div>
 {% endblock %}

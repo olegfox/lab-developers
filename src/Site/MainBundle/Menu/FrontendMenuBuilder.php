@@ -28,7 +28,7 @@ class FrontendMenuBuilder extends ContainerAware
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_page_contacts'
                 ));
-            } elseif ($m->getSlug() == 'blog'){
+            } elseif ($m->getSlug() == 'blogh'){
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_news_all'
                 ));             
@@ -40,7 +40,7 @@ class FrontendMenuBuilder extends ContainerAware
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_page_about'
                 ));             
-            } elseif ($m->getSlug() == 'uslughi-i-tsieny'){
+            } elseif ($m->getSlug() == 'uslughi'){
                 $menu->addChild($m->getTitle(), array(
                     'route' => 'frontend_page_price'
                 ));                       

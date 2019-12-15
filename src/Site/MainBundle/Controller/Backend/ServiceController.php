@@ -208,7 +208,7 @@ class ServiceController extends Controller
                 throw $this->createNotFoundException($this->get('translator')->trans('backend.service.not_found'));
             }
 
-            $entity->deleteAllSlider();
+            $entity->deleteImage();
 
             $em->remove($entity);
             $em->flush();

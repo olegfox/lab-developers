@@ -1,0 +1,15 @@
+{% extends 'SiteMainBundle:Frontend:layout.html.twig' %}
+
+{% block title %}{{ serviceOne.metaTitle }}{% endblock %}
+{% block meta_description %}{{ serviceOne.metaDescription }}{% endblock %}
+{% block meta_keywords %}{{ serviceOne.metaKeywords }}{% endblock %}
+{% block og_title %}{{ serviceOne.metaTitle }}{% endblock %}
+{% block og_description %}{{ serviceOne.metaDescription }}{% endblock %}
+
+{% block content %}
+    <div class="text">
+    {{ wo_render_breadcrumbs() }}
+    <h1>{{ serviceOne.title }}</h1>
+    {{ serviceOne.text|raw }}
+    </div>
+{% endblock %}

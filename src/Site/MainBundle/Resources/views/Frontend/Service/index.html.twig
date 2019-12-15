@@ -5,5 +5,9 @@
 {% block meta_keywords %}{{ page.metaKeywords }}{% endblock %}
 
 {% block content %}
-    <div class="text">{{ page.text|raw }}</div>
+    <div class="text">
+    {{ wo_render_breadcrumbs() }}
+    <h1>{{ page.title }}</h1>
+    {{ page.text|raw }}
+    </div>
 {% endblock %}

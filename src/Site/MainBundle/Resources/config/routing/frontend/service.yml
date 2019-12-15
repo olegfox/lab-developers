@@ -1,0 +1,3 @@
+frontend_service_one:
+    path:     /{slug}
+    defaults: { _controller: "SiteMainBundle:Frontend/Service:one" }

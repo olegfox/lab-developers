@@ -13,9 +13,15 @@ class AboutController extends Controller
 {
     public function indexAction()
     {
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+
+        $breadcrumbs->addItem("Главная", $this->get("router")->generate("frontend_homepage"));
+
         $repository_page = $this->getDoctrine()->getRepository('SiteMainBundle:Page');
 
         $page = $repository_page->findOneBySlug('o-nas'); 
+
+        $breadcrumbs->addItem($page->getTitle());
 
         if(!$page) {
             throw $this->createNotFoundException($this->get('translator')->trans('Страница не найдена'));

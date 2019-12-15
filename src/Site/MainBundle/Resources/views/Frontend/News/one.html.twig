@@ -1,7 +1,46 @@
 {% extends 'SiteMainBundle:Frontend:layout.html.twig' %}
 
+{% block title %}{{ newsOne.metaTitle }}{% endblock %}
+{% block meta_description %}{{ newsOne.metaDescription }}{% endblock %}
+{% block meta_keywords %}{{ newsOne.metaKeywords }}{% endblock %}
+{% block og_title %}{{ newsOne.metaTitle }}{% endblock %}
+{% block og_description %}{{ newsOne.metaDescription }}{% endblock %}
+
 {% block content %}
     <div class="text">
+    {{ wo_render_breadcrumbs() }}
+    <h1>{{ newsOne.title }}</h1>
     {{ newsOne.text|raw }}
+    <script type="text/javascript">(function() {
+    if (window.pluso)if (typeof window.pluso.start == "function") return;
+    if (window.ifpluso==undefined) { window.ifpluso = 1;
+        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+        s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+        s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+        var h=d[g]('body')[0];
+        h.appendChild(s);
+    }})();</script>
+    <div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="/bundles/sitemain/frontend/javascripts/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="/bundles/sitemain/frontend/javascripts/clipboard.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('img').each(function() {
+                var $a = $('<a></a>')
+                    .attr('data-fancybox-trigger', 'gallery')
+                    .attr('href', $(this).attr('src'));
+                $(this).after($a);
+                $(this).appendTo($a);
+            });
+            $().fancybox({
+                selector : 'a[data-fancybox-trigger]'
+            });
+            $('.code-box-copy').codeBoxCopy();
+        });
+    </script>
 {% endblock %}

@@ -23,7 +23,8 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new Presta\SitemapBundle\PrestaSitemapBundle()
+            new Presta\SitemapBundle\PrestaSitemapBundle(),
+            new WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

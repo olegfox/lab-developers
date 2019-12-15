@@ -86,6 +86,20 @@ class Service
      */
     private $file;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="on_main", type="boolean", nullable=true)
+     */
+    private $onMain = false;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer", nullable=true)
+     */
+    private $price;
+
     public function getAbsolutePath()
     {
         return null === $this->img
@@ -385,4 +399,62 @@ class Service
         return $this->date;
     }
 
+    /**
+     * Set onMain
+     *
+     * @param boolean $onMain
+     * @return Project
+     */
+    public function setOnMain($onMain)
+    {
+        $this->onMain = $onMain;
+
+        return $this;
+    }
+
+    /**
+     * Get onMain
+     *
+     * @return boolean 
+     */
+    public function getOnMain()
+    {
+        return $this->onMain;
+    }
+
+    /**
+     * Set price
+     *
+     * @param integer $price
+     * @return Project
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @ORM\PreRemove
+     */
+    public function deleteImage()
+    {
+        if (isset($this->img)) {
+            if(file_exists($this->getUploadDir().'/'.$this->img)){
+                unlink($this->getUploadDir().'/'.$this->img);
+            }
+            $this->img = null;
+        }
+    }
 }

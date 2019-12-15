@@ -46,9 +46,15 @@ class MainController extends Controller
     }
     public function contactsAction()
     {
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+
+        $breadcrumbs->addItem("Главная", $this->get("router")->generate("frontend_homepage"));
+
         $repository_page = $this->getDoctrine()->getRepository('SiteMainBundle:Page');
 
         $page = $repository_page->findOneBySlug('kontakty');
+
+        $breadcrumbs->addItem($page->getTitle());
 
         $form = $this->createCreateForm(new Feedback());
 

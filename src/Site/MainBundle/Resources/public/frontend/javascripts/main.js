@@ -57,7 +57,8 @@ function init(){
             slidesToShow: 1,
             adaptiveHeight: true,
             autoplay: false,
-            autoplaySpeed: 3000
+            autoplaySpeed: 3000,
+            verticalSwiping: false
         });
 
         jQuery('.slider').on('init setPosition', function (slick) {
@@ -99,11 +100,11 @@ function init(){
         });
     };
 
-    initSlider();
+    // initSlider();
 
-    $(window).resize(function() {
-        jQuery('.slider').slick('resize');
-    });
+    // $(window).resize(function() {
+    //     jQuery('.slider').slick('resize');
+    // });
 
     /* Validate and Submit Question form */
     $('#form-feedback').submit(function(){

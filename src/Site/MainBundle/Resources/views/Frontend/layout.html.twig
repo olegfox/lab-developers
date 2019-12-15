@@ -73,12 +73,41 @@
     {% endblock %}
     {% endspaceless %}
     <a href="#" id="back-to-top" class="backToTop" title="Наверх">&uarr;</a>
+    <footer>
+        <div class="container flex-container space-between">
+            <div class="block">
+                {{ knp_menu_render('SiteMainBundle:FrontendMenuBuilder:mainMenu') }}
+            </div>
+            <div class="block">
+                <div class="head">
+                Контактная информация
+                </div>
+                <div class="phone">
+                    Тел: <a href="tel:+79657527048">+7 (965) 752-70-48</a>
+                </div>
+                <div class="email">
+                    Email: <a href="mailto:info@lab-developers.com">info@lab-developers.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="container text-right">
+            <p>
+            Все права защищены © 2019.
+            </p>
+            <p>
+            Копирование материалов без разрашение администрации сайта запрещено.
+            </p>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block javascripts %}
     {% stylesheets
     'bundles/sitemain/frontend/css/fonts.css'
     'bundles/sitemain/frontend/css/slick.css'
+    'bundles/sitemain/frontend/css/jquery.fancybox.min.css'
+    'bundles/sitemain/frontend/css/prism.min.css'
+    'bundles/sitemain/frontend/css/code-box-copy.css'
     'bundles/sitemain/frontend/css/main.css'
     filter='yui_css' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
@@ -93,6 +122,8 @@
     'bundles/sitemain/frontend/javascripts/jquery.lazyload.min.js'
     'bundles/sitemain/frontend/javascripts/main.js'
     'bundles/sitemain/frontend/javascripts/click.menu.js'
+    'bundles/sitemain/frontend/javascripts/prism.min.js'
+    'bundles/sitemain/frontend/javascripts/code-box-copy.js'
     filter='yui_js' %}
     <script type="text/javascript" src="{{ asset_url }}" id="scripts"></script>
     {% endjavascripts %}

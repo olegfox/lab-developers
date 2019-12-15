@@ -13,10 +13,16 @@ class WorkController extends Controller
 {
     public function indexAction()
     {
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+
+        $breadcrumbs->addItem("Главная", $this->get("router")->generate("frontend_homepage"));
+
         $repository_page = $this->getDoctrine()->getRepository('SiteMainBundle:Page');
         $repository_project = $this->getDoctrine()->getRepository('SiteMainBundle:Project');
 
-        $page = $repository_page->findOneBySlug('glavnaia');
+        $page = $repository_page->findOneBySlug('nashi-raboty');
+
+        $breadcrumbs->addItem($page->getTitle());
 
         $projects = $repository_project->findBy(array('onShow' => true));
 

@@ -3,6 +3,8 @@
 {% block title %}{{ page.metaTitle }}{% endblock %}
 {% block meta_description %}{{ page.metaDescription }}{% endblock %}
 {% block meta_keywords %}{{ page.metaKeywords }}{% endblock %}
+{% block og_title %}{{ page.metaTitle }}{% endblock %}
+{% block og_description %}{{ page.metaDescription }}{% endblock %}
 
 {% block content %}
     <!-- Main -->
@@ -13,7 +15,7 @@
                     <div class="wrap-sticker">
                         <div class="sticker revealOnScroll" data-animation="fadeInRight">
                             <div class="wrap">
-                                {{ slider.text|raw }}
+                                <h1>{{ slider.text|raw }}</h1>
                                 <button class="btn btn-main">Заказать сайт</button>
                             </div>
                         </div>
@@ -34,7 +36,7 @@
                     <figure>
                         <img src="{{ asset(service.webPath) }}" alt=""/>
                         <figcaption>
-                            <h1>{{ service.title }}</h1>
+                            <h3><a href="{{ path('frontend_service_one', {slug: service.slug}) }}">{{ service.title }}</a></h3>   
                             <p>{{ service.description }}</p>
                             {#<a href="#" class="btn btn-default">Подробнее</a>#}
                         </figcaption>
@@ -57,12 +59,12 @@
                         <img class="lazy" src="{{ image(project.webPath).cropResize(400).jpeg(100) }}" alt=""/>
                         <figcaption>
                             <div class="wrap">
-                                <h1>{{ project.title }}</h1>
+                                <h3>{{ project.title }}</h3>
                                 <p>{{ project.description }}</p>
                                 {% if project.price > 0 %}
                                 <p>{{ project.price|number_format }} руб.</p>
                                 {% endif %}
-                                <a href="{{ project.site }}" target="_blank" class="btn btn-portfolio">Открыть</a>
+                                <a href="{{ project.site }}" rel="nofollow" target="_blank" class="btn btn-portfolio">Открыть</a>
                             </div>
                         </figcaption>
                     </div>

@@ -27,6 +27,10 @@ frontend_page_price:
     path:     /uslughi
     defaults: { _controller: "SiteMainBundle:Frontend/Price:index" }
 
+frontend_service:
+    resource: "@SiteMainBundle/Resources/config/routing/frontend/service.yml"
+    prefix: /uslughi
+
 frontend_page_index:
     path:     /{slug}
     defaults: { _controller: "SiteMainBundle:Frontend/Main:index" }
