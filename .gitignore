@@ -16,3 +16,4 @@
 /.idea/*
 /composer.phar
 /logs/*
+.vscode
