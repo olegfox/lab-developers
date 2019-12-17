@@ -16,6 +16,7 @@
 
 {% block body %}
     {% spaceless %}
+    {% if app.request.getSchemeAndHttpHost() == prod_host %}
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (d, w, c) {
@@ -45,6 +46,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/34413290" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    {% endif %}
     <!-- Navigation start -->
     <nav role="navigation">
         <div class="wrap">
