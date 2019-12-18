@@ -26,6 +26,15 @@ class MainController extends Controller
 
             if(!$page) {
                 throw $this->createNotFoundException($this->get('translator')->trans('Страница не найдена'));
+            } else {
+                /**
+                 * Проверка регистра slug
+                 * и перенаправление на странице с правильным регистром
+                 * в url
+                 */
+                if ($page->getSlug() !== $slug) {
+                    return $this->redirect($this->generateUrl('frontend_page_index', array('slug' => $page->getSlug())), 301);
+                }
             }
         }
 
