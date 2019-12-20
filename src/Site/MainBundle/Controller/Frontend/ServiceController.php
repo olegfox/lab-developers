@@ -47,6 +47,19 @@ class ServiceController extends Controller
         $repository_service = $this->getDoctrine()->getRepository('SiteMainBundle:Service');
         $serviceOne = $repository_service->findOneBySlug($slug);
 
+        if (!$serviceOne) {
+            throw $this->createNotFoundException($this->get('translator')->trans('Страница не найдена'));
+        } else {
+            /**
+             * Проверка регистра slug
+             * и перенаправление на странице с правильным регистром
+             * в url
+             */
+            if ($serviceOne->getSlug() !== $slug) {
+                return $this->redirect($this->generateUrl('frontend_service_one', array('slug' => $serviceOne->getSlug())), 301);
+            }
+        }
+
         $breadcrumbs->addItem($serviceOne->getTitle());
 
         return $this->render('SiteMainBundle:Frontend/Service:one.html.twig', array(
